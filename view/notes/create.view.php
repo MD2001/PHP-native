@@ -1,5 +1,7 @@
 <?php view("partials/head.php") ?>
 <?php view("partials/Header.php") ?>
+
+
 <main class="container ml-6 p-3 mr-auto mt-10 max-w-3xl bg-gray-100 rounded-md">
     <form action="create" method="POST">
         <div class="space-t-12">
@@ -19,6 +21,7 @@
             </p>
         </div>
         <div class="mt-6 flex items-center justify-end gap-x-6">
+            <a class=" py-6 ml-7 text-blue-500 hover:text-blue-900 hover:underline" href="/notes"> Go back</a>
             <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
             <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>

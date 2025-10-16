@@ -13,7 +13,8 @@ function dd($value)
 
 function urlIs($url)
 {
-    return $_SERVER["REQUEST_URI"] === $url;
+    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    return $path === $url;
 }
 
 function abort($code = Responses::NOTFOUND)
