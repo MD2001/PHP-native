@@ -15,6 +15,7 @@
     </div>
 </main>
 <form action="/note" method="POST">
+    <input type="hidden" name="__method" value="DELETE">
     <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
     <button class="mx-auto py-6 sm:px-32 ml-7 text-red-300 hover:text-red-600 hover:underline" type="submit">Delete</button>
 </form>
