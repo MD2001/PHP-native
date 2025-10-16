@@ -1,6 +1,6 @@
-<?php require "head.php"; ?>
+<?php require base_path("view/partials/head.php") ?>
 
-<?php require "Header.php"; ?>
+<?php require base_path("view/partials/Header.php") ?>
 
 
 <div class="pt-6 mt-6 flex items-center justify-center">
@@ -9,4 +9,4 @@
         <h2 class="text-2xl font-semibold text-gray-700 mb-4">Sorry, not found file</h2>
     </div>
 </div>
-<?php require "body.php" ?>
+<?php require base_path("view/partials/body.php") ?>

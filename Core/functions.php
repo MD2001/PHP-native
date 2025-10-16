@@ -19,9 +19,9 @@ function urlIs($url)
 
 function abort($code = Responses::NOTFOUND)
 {
-    http_response_code($code);
+http_response_code($code);
 
-    require "view/partials/{$code}.php";
+    require base_path("view/partials/{$code}.php");
 
     die();
 }
