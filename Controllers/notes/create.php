@@ -1,4 +1,4 @@
 <?php
 
 
-view("notes/create.view.php");
+view("notes/create.view.php", ["error" => []]);
