@@ -1,10 +1,9 @@
 <?php
 
 use Core\Database;
+use Core\App;
 
-$config = require(base_path('config.php'));
-
-$connection = new Database($config['database'], 'root');
+$connection = App::resolve(Database::class);
 $data = $connection->quiery("select * from notes where user_id =1")->get();
 
 view("notes/index.view.php", [

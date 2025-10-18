@@ -1,10 +1,9 @@
 <?php
 
 use Core\Database;
+use Core\App;
 
-$config = require(base_path('config.php'));
-
-$connection = new Database($config['database'], 'root');
+$connection = App::resolve(Database::class);
 
 $data = $connection->quiery("select * from notes where id = :id", ["id" => $_POST['id']])->findOrFail();
 
@@ -15,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     header("Location: /notes");
     exit;
-}else
-{
+} else {
     abort();
 }

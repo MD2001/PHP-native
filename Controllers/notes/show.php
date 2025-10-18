@@ -1,11 +1,9 @@
 <?php
 
 use Core\Database;
+use Core\App;
 
-$config = require(base_path('config.php'));
-
-$connection = new Database($config['database'], 'root');
-
+$connection = App::resolve(Database::class);
 $data = $connection->quiery("select * from notes where id = :id", ["id" => $_GET['id']])->findOrFail();
 
 Authorize($data["user_id"] === 1);
