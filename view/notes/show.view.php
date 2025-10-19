@@ -14,9 +14,13 @@
 
     </div>
 </main>
-<form action="/note" method="POST">
+<a class="mx-auto py-6 sm:px-32 ml-7 text-gray-400 hover:text-gray-600 hover:underline" href="/note/edit?userid=<?= $userid ?>&id=<?= $_GET['id'] ?>">Edit</a>
+<!-- <form action="/note" method="POST">
     <input type="hidden" name="__method" value="DELETE">
-    <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+    <input type="hidden" name="id" value="""
+    <?php //echo $_GET['id'] 
+    ?>
+    """>
     <button class="mx-auto py-6 sm:px-32 ml-7 text-red-300 hover:text-red-600 hover:underline" type="submit">Delete</button>
-</form>
+</form> -->
 <?php view("partials/body.php") ?>
