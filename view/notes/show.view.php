@@ -18,25 +18,25 @@
 
     <!-- Actions -->
     <div class="flex items-center justify-between mt-8 border-t pt-4">
+
+        <!-- Edit Link -->
         <a
             href="/note/edit?userid=<?= $userid ?>&id=<?= $_GET['id'] ?>"
             class="text-gray-500 hover:text-gray-800 hover:underline text-sm font-medium">
             ✏️ Edit
         </a>
 
-        <!-- Future Delete Form -->
-        <!--
-    <form action="/note" method="POST" class="inline">
-      <input type="hidden" name="__method" value="DELETE">
-      <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
-      <button 
-        type="submit" 
-        class="text-red-400 hover:text-red-600 hover:underline text-sm font-medium"
-      >
-        🗑️ Delete
-      </button>
-    </form>
-    -->
+        <!-- Delete Form -->
+        <form action="/note" method="POST" class="inline">
+            <input type="hidden" name="__method" value="DELETE">
+            <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+            <button
+                type="submit"
+                class="text-red-400 hover:text-white bg-transparent hover:bg-red-500 border border-red-400 transition-all duration-200 rounded-lg px-3 py-1 text-sm font-medium">
+                🗑️ Delete
+            </button>
+        </form>
+
     </div>
 </main>
 
