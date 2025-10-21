@@ -10,8 +10,6 @@
 </head>
 
 <body>
-  <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
   <header class="bg-gray-900">
     <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
       <div class="flex lg:flex-1">
@@ -28,4 +26,3 @@
           </svg>
         </button>
       </div>
-      <el-popover-group class="hidden lg:flex lg:gap-x-12">
