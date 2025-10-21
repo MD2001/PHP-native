@@ -4,10 +4,18 @@
 <a href="/pricing" class="<?= urlIs('/pricing') ? "text-blue-500" : "text-white" ?> text-sm/6 font-semibold ">Pricing</a>
 </el-popover-group>
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-  <?php if (!urlIs('/register')): ?>
-    <a href="/register" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span>
-    </a>
-  <?php endif; ?>
+  <div class="text-gray-100 px-4 py-1 rounded-lg font-medium tracking-wide">
+    <?php if ($_SESSION["name"] ?? false): ?>
+       <div class="text-gray-100 px-4 py-1 rounded-lg font-medium tracking-wide">
+          <?= $_SESSION["name"]?>
+        </div>
+        <?php else : ?>
+    <?php if (!urlIs('/register')): ?>
+      <a href="/register" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span>
+      </a>
+  </div>
+<?php endif; ?>
+<?php endif; ?>
 </div>
 </nav>
 <el-dialog>
@@ -19,6 +27,7 @@
             <span class="sr-only">Your Company</span>
             <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />
           </a>
+
           <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-400">
             <span class="sr-only">Close menu</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
