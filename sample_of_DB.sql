@@ -15,13 +15,14 @@ CREATE TABLE `notes` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(225) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(225) DEFAULT 'Unkonwn',
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -34,10 +35,10 @@ INSERT INTO `notes` (`id`, `body`, `user_id`) VALUES
 (11, 'trying to make sure the auto increment works fine', 3),
 (12, 'example data for testing crud operations', 2),
 (14, 'more practice helps in backend development', 2);
-INSERT INTO `users` (`id`, `name`, `email`) VALUES
-(1, 'mohamed', 'mohamed@php.com'),
-(2, 'ahmed', 'ahmed@php.com'),
-(3, 'zead', 'zead@php.com');
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(1, 'mohamed', 'mohamed@php.com', 'mohamed'),
+(2, 'ahmed', 'ahmed@php.com', 'ahmed'),
+(3, 'zead', 'zead@php.com', 'zead');
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

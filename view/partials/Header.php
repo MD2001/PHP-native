@@ -4,7 +4,10 @@
 <a href="/pricing" class="<?= urlIs('/pricing') ? "text-blue-500" : "text-white" ?> text-sm/6 font-semibold ">Pricing</a>
 </el-popover-group>
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-  <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+  <?php if (!urlIs('/register')): ?>
+    <a href="/register" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span>
+    </a>
+  <?php endif; ?>
 </div>
 </nav>
 <el-dialog>
