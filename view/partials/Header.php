@@ -6,13 +6,13 @@
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
   <div class="text-gray-100 px-4 py-1 rounded-lg font-medium tracking-wide">
     <?php if ($_SESSION["name"] ?? false): ?>
-       <div class="text-gray-100 px-4 py-1 rounded-lg font-medium tracking-wide">
-          <?= $_SESSION["name"]?>
-        </div>
-        <?php else : ?>
-    <?php if (!urlIs('/register')): ?>
-      <a href="/register" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span>
-      </a>
+      <div class="text-gray-100 px-4 py-1 rounded-lg font-medium tracking-wide">
+        <a href="/register"> <?= $_SESSION["name"] ?></a>
+      </div>
+    <?php else : ?>
+      <?php if (!urlIs('/register')): ?>
+        <a href="/register" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span>
+        </a>
   </div>
 <?php endif; ?>
 <?php endif; ?>
