@@ -14,6 +14,12 @@ if (!Verification::email($_POST["email"])) {
 if (!Verification::string($_POST["password"], 3, 50)) {
     $error["password"] = "this password is not correct";
 }
+
+if (empty($error)) {
+    view("registers/index.view.php", ["error" => $error]);
+    exit();
+}
+
 //chick if the email in your data base if not add it 
 $db = App::resolve(Database::class);
 $result = $db->quiery("select * from users where email=:email AND password = :password ", [
