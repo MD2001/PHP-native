@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+use Core\Midllware\Midllware;
 
 class Router
 {
@@ -12,38 +13,51 @@ class Router
         "uri" => "/",
         "controller" => "Controller/index.php",
         "method" => "GET"
+        "auth" => null
         ]
  */
-    public function add($uri, $controller, $method)
+    public function add($uri, $controller, $method, $midllware = null)
     {
-        $this->routes[] = compact('uri', 'controller', 'method');
+        $this->routes[] = compact('uri', 'controller', 'method', 'midllware');
+        return $this;
     }
 
     public function get($uri, $controller)
     {
-        $this->add($uri, $controller, "GET");
+        return $this->add($uri, $controller, "GET");
     }
     public function post($uri, $controller)
     {
-        $this->add($uri, $controller, "POST");
+        return $this->add($uri, $controller, "POST");
     }
     public function delete($uri, $controller)
     {
-        $this->add($uri, $controller, "DELETE");
+        return $this->add($uri, $controller, "DELETE");
     }
     public function patch($uri, $controller)
     {
-        $this->add($uri, $controller, "PATCH");
+        return $this->add($uri, $controller, "PATCH");
     }
     public function put($uri, $controller)
     {
-        $this->add($uri, $controller, "PUT");
+        return $this->add($uri, $controller, "PUT");
+    }
+
+    public function only($key)
+    {
+        $this->routes[array_key_last($this->routes)]["midllware"] = $key;
     }
 
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
             if ($uri === $route['uri'] && $method === $route['method']) {
+
+                if ($route['midllware']) {
+
+                    $midllware = Midllware::Map[$route["midllware"]];
+                    (new $midllware)->handle();
+                }
                 require base_path($route["controller"]);
                 exit();
             }
