@@ -6,9 +6,9 @@
 </el-popover-group>
 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
   <div class="text-gray-100 px-4 py-1 rounded-lg font-medium tracking-wide">
-    <?php if ($_SESSION["name"] ?? false): ?>
+    <?php if ($_SESSION["login"] ?? false): ?>
       <div class="text-gray-100 px-4 py-1 rounded-lg font-medium tracking-wide">
-        <a href="/logout"> <?= $_SESSION["name"] ?></a>
+        <a href="/logout"> <?= $_SESSION["name"] ?? "Unkonwn" ?></a>
       </div>
     <?php else : ?>
       <?php if (!urlIs('/register')): ?>

@@ -15,6 +15,9 @@ if (!Verification::string($_POST["password"], 3, 50)) {
 
 
 $db = App::resolve(Database::class);
+$email = $db->quiery("select * from users where email=:email", [
+    "email" => $_POST["email"],
+])->find();
 $result = $db->quiery("select * from users where email=:email AND password = :password ", [
     "email" => $_POST["email"],
     "password" => $_POST["password"],
@@ -27,8 +30,20 @@ if ($result) {
     header("location:/");
     exit();
 } else {
-    $error["email"] = "the email or password is wrong";
-    $error["password"] = "";
+    if ($email) {
+
+        $error["password"] = "this password not correct";
+    } else {
+        $db->quiery("INSERT INTO users (email, password) VALUES (:email, :password)", [
+            "email" => $_POST["email"],
+            "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
+        ]);
+        $_SESSION["login"] = true;
+        $_SESSION["userid"] = $result["id"];
+        $_SESSION["name"] = $result["name"];
+        header("location:/");
+        exit();
+    }
 }
 if (!empty($error)) {
     view("registers/index.view.php", ["error" => $error]);
