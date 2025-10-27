@@ -16,7 +16,7 @@
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
                 <div class="mt-2">
-                    <input id="email" name="email" autocomplete="email"
+                    <input id="email" name="email" autocomplete="email" value="<?= $email ?? "" ?>"
                         class="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 
                         shadow-sm ring-1 ring-inset ring-gray-300 
                         placeholder:text-gray-400 

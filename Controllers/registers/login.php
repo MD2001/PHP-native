@@ -46,6 +46,6 @@ if ($result) {
     }
 }
 if (!empty($error)) {
-    view("registers/index.view.php", ["error" => $error]);
+    view("registers/index.view.php", ["error" => $error, "email" => $_POST["email"]]);
     exit();
 }
