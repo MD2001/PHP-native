@@ -7,7 +7,7 @@
             alt="Your Company"
             class="mx-auto h-10 w-auto" />
         <h2 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">
-            Register To Make Notes
+            Sign in to your account
         </h2>
     </div>
 
