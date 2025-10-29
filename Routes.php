@@ -20,3 +20,4 @@
    $router->post('/register', "Controllers/registers/create.php");
 
    $router->delete('/note', "Controllers/notes/destroy.php");
+$router->post('/session/create', "Controllers/session/create.php");
