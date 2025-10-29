@@ -11,12 +11,17 @@
         <a href="/logout"> <?= $_SESSION["name"] ?? "Unkonwn" ?></a>
       </div>
     <?php else : ?>
-
-      <!-- need to but home button when the register page is open somewhere her -->
-      <?php if (!urlIs('/register')): ?>
+      <?php if ((!urlIs('/register')) && (!urlIs('/login'))): ?>
         <a href="/login" class="text-sm/6 font-semibold text-white px-2 hover:text-gray-500">Log in <span aria-hidden="true"></span>
           <a href="/register" class="text-sm/6 font-semibold text-white px-2 hover:text-gray-500">Register <span aria-hidden="true"></span>
           </a>
+        <?php else : ?>
+          <a href="/"
+            class="flex items-center text-sm font-semibold text-white hover:text-gray-400 transition-colors duration-200">
+            <span class="mr-1 text-lg">&larr;</span>
+            Home
+          </a>
+
   </div>
 <?php endif; ?>
 <?php endif; ?>
