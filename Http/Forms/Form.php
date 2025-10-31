@@ -6,13 +6,17 @@ use Core\Verification;
 
 class Form
 {
-    public static function validate($email, $passowrd, &$error)
+    public static function validate($email, $passowrd, &$error = null)
     {
-        if (!Verification::email($_POST["email"])) {
-            $error["email"] = "this email is not correct";
+        $loaclarr = []; //used as temporary array if error not provieded
+        $errors = &$error ?? $loaclarr;
+        if (!Verification::email($email)) {
+            $errors["email"] = "this email is not correct";
         }
-        if (!Verification::string($_POST["password"], 3, 50)) {
-            $error["password"] = "this password is not correct";
+        if (!Verification::string($passowrd, 3, 50)) {
+            $errors["password"] = "this password is not correct";
         }
+
+        return empty($errors);
     }
 }

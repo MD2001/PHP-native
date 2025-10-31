@@ -19,7 +19,7 @@ function urlIs($url)
 
 function abort($code = Responses::NOTFOUND)
 {
-http_response_code($code);
+    http_response_code($code);
 
     require base_path("view/partials/{$code}.php");
 
@@ -52,4 +52,9 @@ function view($path, $attribute = [])
 {
     extract($attribute);
     require base_path("view/" . $path);
+}
+function redirect($path)
+{
+    header("location:{$path}");
+    exit();
 }
