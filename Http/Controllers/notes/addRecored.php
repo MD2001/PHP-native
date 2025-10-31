@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             "INSERT INTO notes (body, user_id) VALUES (:body, :id)",
             [
                 "body" => text_normalize($_POST["about"]),
-                "id" => 1
+                "id" => $_SESSION["userid"],
             ]
         );
         $_POST["about"] = '';
