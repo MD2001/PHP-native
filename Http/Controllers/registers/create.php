@@ -17,6 +17,11 @@ if ($email) {
 
     $error["password"] = "this email is used";
 } else {
+
+    if (!empty($error)) {
+        view("registers/index.view.php", ["error" => $error, "email" => $_POST["email"]]);
+        exit();
+    }
     $db->quiery("INSERT INTO users (email, password) VALUES (:email, :password)", [
         "email" => $_POST["email"],
         "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
@@ -25,10 +30,5 @@ if ($email) {
     $_SESSION["userid"] = $result["id"];
     $_SESSION["name"] = $result["name"];
     header("location:/");
-    exit();
-}
-
-if (!empty($error)) {
-    view("registers/index.view.php", ["error" => $error, "email" => $_POST["email"]]);
     exit();
 }

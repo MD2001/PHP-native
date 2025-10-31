@@ -10,6 +10,15 @@ use Http\Forms\Form;
 $error = [];
 Form::validate($_POST["email"], $_POST["password"], $error);
 
+if (!empty($error)) {
+    view("session/index.view.php", [
+        "error" => $error,
+        "email" => $_POST["email"],
+    ]);
+    exit();
+}
+
+
 $db = App::resolve(Database::class);
 $email = $db->quiery("select * from users where email=:email", [
     "email" => $_POST["email"],
