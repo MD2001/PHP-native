@@ -44,6 +44,10 @@ class Database
 
         return $result;
     }
+    public function lastInsertId()
+    {
+        return $this->connection->lastInsertId();
+    }
 
     // public function fetchall($options = PDO::FETCH_ASSOC)
     // {

@@ -7,7 +7,7 @@ use Core\Database;
 
 class Authorizor
 {
-    public function attempt($email, $password, &$error)
+    public function foundemail($email, bool $found_is_error = false, &$error = null)
     {
         $localerror = [];
 
@@ -19,14 +19,15 @@ class Authorizor
         ])->find();
 
         if ($email) {
-
-            $errors["email"] = "this email is used";
+            if ($found_is_error) {
+                $errors["email"] = "this email is used";
+            }
         }
 
         return empty($errors);
     }
 
-    public function login(...$data)
+    public function login($data)
     {
         $_SESSION["login"] = true;
 
@@ -43,12 +44,12 @@ class Authorizor
             "email" => $email,
             "password" => password_hash($password, PASSWORD_DEFAULT),
         ]);
-        $email = $db->quiery("select email from users where email=:email", [
+        $result = $db->quiery("select * from users where email=:email", [
             "email" => $_POST["email"],
         ])->find();
         $this->login([
-            "id" => $email["id"],
-            "name" => $email["name"],
+            "userid" => $result["id"],
+            "name" => $result["name"],
         ]);
     }
 }

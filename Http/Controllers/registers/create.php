@@ -11,7 +11,7 @@ if (Form::validate($email, $password, $error)) {
 
     $form = new Authorizor();
 
-    if ($form->attempt($email,  $password, $error)) {
+    if ($form->foundemail($email, true, $error)) {
         $form->adduser($email, $password);
     }
 }
