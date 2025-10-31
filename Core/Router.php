@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+
 use Core\Midllware\Midllware;
 
 class Router
@@ -58,7 +59,7 @@ class Router
                     $midllware = Midllware::Map[$route["midllware"]];
                     (new $midllware)->handle();
                 }
-                require base_path($route["controller"]);
+                require base_path("Http/Controllers/" . $route["controller"]);
                 exit();
             }
         }
