@@ -2,7 +2,7 @@
 
 use Core\App;
 use Core\Database;
-use Core\Form;
+use Http\Forms\Form;
 
 $error = [];
 Form::validate($_POST["email"], $_POST["password"], $error);
