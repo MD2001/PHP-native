@@ -2,6 +2,7 @@
 
 namespace Core;
 
+use Core\Session;
 use Core\Midllware\Midllware;
 
 class Router
@@ -60,6 +61,7 @@ class Router
                     (new $midllware)->handle();
                 }
                 require base_path("Http/Controllers/" . $route["controller"]);
+                Session::unflash();
                 exit();
             }
         }
