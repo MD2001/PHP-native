@@ -1,5 +1,6 @@
 <?php
 
+use Core\Session;
 use Http\Forms\Form;
 use Http\Forms\Authorizor;
 
@@ -15,8 +16,8 @@ if (Form::validate($email, $password, $error)) {
         $form->adduser($email, $password);
     }
 }
-view("registers/index.view.php", [
-    "error" => $error,
-    "email" => $email
-]);
-exit();
+
+Session::flash("error", $error);
+Session::flash("email", $email);
+
+redirect("/register");

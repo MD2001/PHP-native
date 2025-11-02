@@ -1,6 +1,7 @@
 <?php
 
 use Core\Responses;
+use Core\Session;
 
 function dd($value)
 {
@@ -50,6 +51,9 @@ function base_path($path)
 
 function view($path, $attribute = [])
 {
+    if (Session::issetgetFlashArr()) {
+        extract(Session::getFlashArr());
+    }
     extract($attribute);
     require base_path("view/" . $path);
 }
