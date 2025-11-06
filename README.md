@@ -14,7 +14,7 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
 1. Clone the repository:
    ```bash
    git clone https://github.com/MD2001/PHP-native.git
-   
+   ```
 2. Install Composer dependencies:  
    `composer install`
    
@@ -27,9 +27,10 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
    `require __DIR__ . '/vendor/autoload.php';`
    
 6. Run the project using PHP’s built-in server:  
-  `php -S localhost:8888 -t public`
-
-**Project Structure**  
+  ```bash
+   php -S localhost:8888 -t public  
+   ```
+7. **Project Structure**  
   ```bash
   /Controllers        → Application logic   
   /view               → Views and partials  
