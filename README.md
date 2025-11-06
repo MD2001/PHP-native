@@ -29,9 +29,9 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
 6. Run the project using PHP’s built-in server:
   `php -S localhost:8888 -t public`
 
-**Project Structure**
-`  /Controllers        → Application logic <br>
-  /view               → Views and partials <br>
+**Project Structure**  
+`  /Controllers        → Application logic  `  
+  /view               → Views and partials
   /public             → Public web root (entry point) <br>
   vendor/             → Composer packages + autoloader <br>
   Routes.php          → URL route definitions <br>
