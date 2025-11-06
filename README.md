@@ -1,18 +1,35 @@
 # PHP_native
 
-A simple custom PHP MVC-style framework / project built manually—not using an off-the-shelf framework.
+A lightweight custom PHP MVC-style project built manually, using Composer for class autoloading.
 
-## ✅ Features
+## Features
+- Simple and clean custom MVC-like structure
+- Routing system with centralized `Routes.php`
+- Composer autoloader (`vendor/autoload.php`) for automatic class loading
+- Separated controllers and views
+- Database connection layer included
+- Example SQL schema provided
 
-- Custom folder structure:
-  - `Controllers/` → route logic (e.g., `home.php`, `notes.php`, `pricing.php`, …)
-  - `view/` → templates and partials (e.g., `home.view.php`, `partials/head.php`, `partials/Header.php`)
-  - Root files: `config.php`, `Database.php`, `functions.php`, `index.php`, `Responses.php`, `Router.php`, `Routes.php`
-- Easy to understand and extend without complexities of large frameworks.
-- Includes a sample database schema (`sample_of_DB.sql`) for quick start.
-
-## 🛠 Setup
-
+## Setup
 1. Clone the repository:
    ```bash
    git clone https://github.com/MD2001/PHP-native.git
+2. Install Composer dependencies:
+   composer install
+3. Create a MySQL database and import the provided SQL file:
+   sample_of_DB.sql
+4.Update database settings in config.php.
+5.Ensure Composer autoload is included in index.php:
+  require __DIR__ . '/vendor/autoload.php';
+6.Run the project using PHP’s built-in server:
+  php -S localhost:8888 -t public
+**Project Structure**
+  /Controllers        → Application logic
+  /view               → Views and partials
+  /public             → Public web root (entry point)
+  vendor/             → Composer packages + autoloader
+  Routes.php          → URL route definitions
+  Router.php          → Routing system
+  Database.php        → Database connection handler
+  config.php          → App configuration
+
