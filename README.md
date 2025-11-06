@@ -31,11 +31,10 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
 
 **Project Structure**  
 `  /Controllers        → Application logic  `  
-  /view               → Views and partials
-  /public             → Public web root (entry point) <br>
-  vendor/             → Composer packages + autoloader <br>
-  Routes.php          → URL route definitions <br>
-  Router.php          → Routing system  <br>
-  Database.php        → Database connection handler <br>
-  config.php          → App configuration` <br>
-
+ ` /view               → Views and partials`  
+`  /public             → Public web root (entry point)`  
+ ` vendor/             → Composer packages + autoloader`  
+  `Routes.php          → URL route definitions `  
+ ` Router.php          → Routing system `  
+ ` Database.php        → Database connection handler`  
+ ` config.php          → App configuration`  
