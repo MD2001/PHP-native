@@ -30,11 +30,12 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
   `php -S localhost:8888 -t public`
 
 **Project Structure**  
-`  /Controllers        → Application logic  `  
- ` /view               → Views and partials`  
-`  /public             → Public web root (entry point)`  
- ` vendor/             → Composer packages + autoloader`  
-  `Routes.php          → URL route definitions `  
- ` Router.php          → Routing system `  
- ` Database.php        → Database connection handler`  
- ` config.php          → App configuration`  
+  ```bash
+  /Controllers        → Application logic   
+  /view               → Views and partials  
+  /public             → Public web root (entry point)  
+  vendor/             → Composer packages + autoloader  
+  Routes.php          → URL route definitions   
+  Router.php          → Routing system   
+  Database.php        → Database connection handler  
+  config.php          → App configuration  
