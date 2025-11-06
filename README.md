@@ -14,22 +14,28 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
 1. Clone the repository:
    ```bash
    git clone https://github.com/MD2001/PHP-native.git
+   
 2. Install Composer dependencies:
    `composer install`
+   
 3. Create a MySQL database and import the provided SQL file:
    ` sample_of_DB.sql`
+   
 4. Update database settings in config.php.
+   
 5. Ensure Composer autoload is included in index.php:
    `require __DIR__ . '/vendor/autoload.php';`
+   
 6. Run the project using PHP’s built-in server:
   `php -S localhost:8888 -t public`
+
 **Project Structure**
-`  /Controllers        → Application logic
-  /view               → Views and partials
-  /public             → Public web root (entry point)
-  vendor/             → Composer packages + autoloader
-  Routes.php          → URL route definitions
-  Router.php          → Routing system
-  Database.php        → Database connection handler
-  config.php          → App configuration`
+`  /Controllers        → Application logic <br>
+  /view               → Views and partials <br>
+  /public             → Public web root (entry point) <br>
+  vendor/             → Composer packages + autoloader <br>
+  Routes.php          → URL route definitions <br>
+  Router.php          → Routing system  <br>
+  Database.php        → Database connection handler <br>
+  config.php          → App configuration` <br>
 
