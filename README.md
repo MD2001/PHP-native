@@ -18,10 +18,10 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
    composer install
 3. Create a MySQL database and import the provided SQL file:
    sample_of_DB.sql
-4.Update database settings in config.php.
-5.Ensure Composer autoload is included in index.php:
+4. Update database settings in config.php.
+5. Ensure Composer autoload is included in index.php:
   require __DIR__ . '/vendor/autoload.php';
-6.Run the project using PHP’s built-in server:
+6. Run the project using PHP’s built-in server:
   php -S localhost:8888 -t public
 **Project Structure**
   /Controllers        → Application logic
