@@ -40,3 +40,10 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
   Router.php          → Routing system   
   Database.php        → Database connection handler  
   config.php          → App configuration  
+
+
+## testing
+* you have some testing her using **pestphp/pest** pakges
+make sure you dump the autoloader before you start testing 
+```bash composer dump-autoload```
+this make the project see where he get the Test class 
