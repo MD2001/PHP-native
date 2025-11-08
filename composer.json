@@ -6,11 +6,18 @@
             "email": "mdiea0581@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "pestphp/pest": "^4.1"
+    },
     "autoload": {
         "psr-4": {
             "Core\\" : "Core/",
             "Http\\" : "Http/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
