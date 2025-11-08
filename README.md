@@ -42,7 +42,7 @@ A lightweight custom PHP MVC-style project built manually, using Composer for cl
   config.php          → App configuration  
 ```
 
-## testing
+## Testing
 * you have some testing her using **pestphp/pest** pakges
 make sure you dump the autoloader before you start testing 
 ```bash
